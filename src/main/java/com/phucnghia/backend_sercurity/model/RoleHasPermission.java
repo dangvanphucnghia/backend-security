@@ -20,6 +20,6 @@ public class RoleHasPermission extends AbstractEntity<Integer>{
 
     @ManyToOne
     @JoinColumn(name = "permission_id")
-    private Permission description;
+    private Permission permission;
 
 }

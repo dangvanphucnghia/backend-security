@@ -1,7 +1,6 @@
 package com.phucnghia.backend_sercurity.service;
 
 import com.phucnghia.backend_sercurity.model.Role;
-import com.phucnghia.backend_sercurity.repository.RoleRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
