@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+openapi:
+  service:
+    api-docs: backend-security
+    serverUrl: ${API_URL:DUMMY-API-URL}
+    serverName: Server Test
+    title: BACKEND SECURITY
+    version: 1.0.0

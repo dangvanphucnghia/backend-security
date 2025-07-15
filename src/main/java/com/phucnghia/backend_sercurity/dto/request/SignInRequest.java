@@ -7,7 +7,7 @@ import lombok.Getter;
 
 import java.io.Serializable;
 @Getter
-public class SignInrequest implements Serializable {
+public class SignInRequest implements Serializable {
 
     @NotBlank(message = "username must be not blank")
     private String username;
