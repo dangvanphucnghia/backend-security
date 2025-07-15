@@ -1,1 +1,42 @@
-spring.application.name=backend-sercurity
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:postgres}
+    username: ${DATABASE_USERNAME:dev}
+    password: ${DATABASE_PASSWORD:password}
+    hikari:
+      pool-name: HikariConnPool
+      maximum-pool-size: 10         # default: 10
+      minimum-idle: 10              # default: same as max pool size
+      connection-timeout: 30000     # default: 30s
+      idle-timeout: 600000          # default: 10 minutes
+      max-lifetime: 1800000         # default: 30 minutes
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+openapi:
+  service:
+    api-docs: backend-security
+    serverUrl: http://localhost:${server.port}
+    serverName: Server Dev
+    title: BACKEND SECURITY
+    version: 1.0.0
+
+jwt:
+  expiryHour: 1
+  expiryDay: 14
+  accessKey: c2VjcmV0QGtleS5hcGlfaGFzX2JlZW5fZGVzaWduZWRfYnlfVGF5TFE=
+  refreshKey: 9k1jJAWAKQCnCEz1pwcPNegbHoLugf9hgEnn6sz5pFc=
